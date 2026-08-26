@@ -844,6 +844,22 @@ h3 {
 }
 
 @media(max-width:1000px) {
+    .site-header {
+        height: auto;
+        flex-wrap: wrap;
+        row-gap: 14px;
+        padding-top: 16px;
+        padding-bottom: 16px
+    }
+
+    .site-header .brand {
+        width: 100%
+    }
+
+    .site-header nav {
+        margin-left: auto
+    }
+
     .hero {
         grid-template-columns: 1fr;
         padding-top: 20px
@@ -887,8 +903,8 @@ h3 {
 
 @media(max-width:620px) {
     .site-header {
-        height: 72px;
-        padding: 0 20px
+        height: auto;
+        padding: 16px 20px
     }
 
     .brand {
