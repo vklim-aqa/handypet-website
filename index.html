@@ -7,7 +7,7 @@
   <meta name="description"
     content="HandyPet keeps your pet's health records, reminders, and care history in one secure place." />
   <title>HandyPet — Your pet's health, all in one place</title>
-  <link rel="icon" type="image/png" href="assets/app-icon.png" />
+  <link rel="icon" type="image/png" href="assets/icon-white.png" />
   <link rel="stylesheet" href="styles.css?v=11" />
   <script src="script.js?v=1" defer></script>
 </head>
@@ -18,28 +18,32 @@
       <span class="brand-paw" aria-hidden="true">✣</span>
       <span>Handy<span>Pet</span></span>
     </a>
-    <nav aria-label="Main navigation">
-      <a href="#features">Features</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
+    <nav aria-label="Main navigation" data-i18n-aria="navLabel">
+      <a href="#features" data-i18n="featuresNav">Features</a>
+      <a href="privacy.html" data-i18n="privacyNav">Privacy</a>
+      <a href="terms.html" data-i18n="termsNav">Terms</a>
     </nav>
+    <label class="language-picker header-language-picker"><span class="sr-only" data-i18n="languageLabel">Language</span>
+      <select id="language-select-header" aria-label="Select language" data-i18n-aria="languageLabel">
+        <option value="en">English</option><option value="es">Spanish</option><option value="fr">French</option><option value="de">German</option><option value="pt">Portuguese</option>
+      </select>
+    </label>
   </header>
 
   <main id="top">
       <section class="hero" id="download" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow">Care, connected</p>
-        <h1 id="hero-title">Your pet’s health<br />records in one place</h1>
-        <p class="hero-lede">Track vaccinations, vet visits, medications, and medical records—all in one secure place.
-          Stay organized and keep your pet happy and healthy.</p>
-        <div class="download-actions" aria-label="Download HandyPet">
-          <a class="button button-primary" href="#download"><span class="store-icon">▣</span>Download for Android</a>
-          <a class="button button-outline" href="#download"><span class="apple-icon">●</span>Download for iOS</a>
+        <p class="eyebrow" data-i18n="eyebrow">Care, connected</p>
+        <h1 id="hero-title" data-i18n-html="heroTitle">Your pet’s health<br />records in one place</h1>
+        <p class="hero-lede" data-i18n="heroLede">Track vaccinations, vet visits, medications, and medical records—all in one secure place. Stay organized and keep your pet happy and healthy.</p>
+        <div class="download-actions" aria-label="Download HandyPet" data-i18n-aria="downloadLabel">
+          <a class="button button-primary" href="#download"><span class="store-icon">▣</span><span data-i18n="android">Download for Android</span></a>
+          <a class="button button-outline" href="#download"><span class="apple-icon">●</span><span data-i18n="ios">Download for iOS</span></a>
         </div>
         <div class="trust-row" aria-label="HandyPet benefits">
-          <span><b>♢</b> Secure &amp; Private</span>
-          <span><b>⌁</b> Cloud Sync</span>
-          <span><b>♙</b> Your data, always yours</span>
+          <span><b>♢</b> <span data-i18n="secure">Secure &amp; Private</span></span>
+          <span><b>⌁</b> <span data-i18n="sync">Cloud Sync</span></span>
+          <span><b>♙</b> <span data-i18n="data">Your data, always yours</span></span>
         </div>
       </div>
 
@@ -107,46 +111,46 @@
     </section>
 
     <section class="features feature-showcase" id="features" aria-labelledby="features-title">
-      <h2 id="features-title" class="sr-only">HandyPet features</h2>
+      <h2 id="features-title" class="sr-only" data-i18n="featuresTitle">HandyPet features</h2>
       <article class="feature-card">
         <div class="feature-icon teal">♢</div>
-        <h3>Vaccinations</h3>
-        <p>Track vaccines and never miss an important dose.</p>
+        <h3 data-i18n="vaccinations">Vaccinations</h3>
+        <p data-i18n="vaccinationsText">Track vaccines and never miss an important dose.</p>
       </article>
       <article class="feature-card">
         <div class="feature-icon blue">▣</div>
-        <h3>Vet Visits</h3>
-        <p>Log visits and keep a history of your pet’s health.</p>
+        <h3 data-i18n="vetVisits">Vet Visits</h3>
+        <p data-i18n="vetVisitsText">Log visits and keep a history of your pet’s health.</p>
       </article>
       <article class="feature-card">
         <div class="feature-icon purple">⌕</div>
-        <h3>Medications</h3>
-        <p>Manage medications and set helpful reminders.</p>
+        <h3 data-i18n="medications">Medications</h3>
+        <p data-i18n="medicationsText">Manage medications and set helpful reminders.</p>
       </article>
       <article class="feature-card">
         <div class="feature-icon slate">▤</div>
-        <h3>Medical Records</h3>
-        <p>Store test results and records in one secure place.</p>
+        <h3 data-i18n="medicalRecords">Medical Records</h3>
+        <p data-i18n="medicalRecordsText">Store test results and records in one secure place.</p>
       </article>
       <article class="feature-card">
         <div class="feature-icon weight"></div>
-        <h3>Weight Logging</h3>
-        <p>Track weight changes over time and follow your pet’s progress.</p>
+        <h3 data-i18n="weightLogging">Weight Logging</h3>
+        <p data-i18n="weightLoggingText">Track weight changes over time and follow your pet’s progress.</p>
       </article>
       <article class="feature-card">
         <div class="feature-icon documents"></div>
-        <h3>Document Uploads</h3>
-        <p>Upload and organize important pet documents securely.</p>
+        <h3 data-i18n="documentUploads">Document Uploads</h3>
+        <p data-i18n="documentUploadsText">Upload and organize important pet documents securely.</p>
       </article>
       <article class="feature-card">
         <div class="feature-icon export"></div>
-        <h3>Health Record Exports</h3>
-        <p>Export your pet’s complete health history as a convenient PDF.</p>
+        <h3 data-i18n="recordExports">Health Record Exports</h3>
+        <p data-i18n="recordExportsText">Export your pet’s complete health history as a convenient PDF.</p>
       </article>
       <article class="feature-card">
         <div class="feature-icon reminder"></div>
-        <h3>Custom Reminders</h3>
-        <p>Schedule pet reminders for the exact date and time you choose.</p>
+        <h3 data-i18n="customReminders">Custom Reminders</h3>
+        <p data-i18n="customRemindersText">Schedule pet reminders for the exact date and time you choose.</p>
       </article>
     </section>
   </main>
@@ -154,9 +158,14 @@
   <footer class="site-footer">
     <a class="brand" href="#top"><span class="brand-paw"
         aria-hidden="true">✣</span><span>Handy<span>Pet</span></span></a>
-    <div class="footer-links"><a id="privacy" href="privacy.html">Privacy Policy</a><a id="terms"
-        href="terms.html">Terms of Use</a><a href="mailto:support@handypet.app">Support</a></div>
-    <p>© 2026 HandyPet. All rights reserved.</p>
+    <div class="footer-links"><a id="privacy" href="privacy.html" data-i18n="privacy">Privacy Policy</a><a id="terms"
+        href="terms.html" data-i18n="terms">Terms of Use</a><a href="mailto:support@handypet.app" data-i18n="support">Support</a></div>
+    <label class="language-picker"><span data-i18n="languageLabel">Language</span>
+      <select id="language-select" aria-label="Select language" data-i18n-aria="languageLabel">
+        <option value="en">English</option><option value="es">Spanish</option><option value="fr">French</option><option value="de">German</option><option value="pt">Portuguese</option>
+      </select>
+    </label>
+    <p data-i18n="copyright">© 2026 HandyPet. All rights reserved.</p>
   </footer>
 </body>
 

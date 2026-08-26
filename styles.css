@@ -772,6 +772,30 @@ h3 {
     margin-left: 9%
 }
 
+.language-picker {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #526172;
+    font-size: 13px;
+    white-space: nowrap
+}
+
+.language-picker select {
+    min-height: 36px;
+    padding: 0 30px 0 10px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ink);
+    font: inherit;
+    cursor: pointer
+}
+
+.header-language-picker {
+    margin-left: 24px
+}
+
 .site-footer p {
     color: #526172;
     font-size: 13px
@@ -845,6 +869,10 @@ h3 {
         gap: 15px
     }
 
+    .header-language-picker {
+        margin-left: 8px
+    }
+
     .site-header nav a {
         font-size: 13px
     }
@@ -911,5 +939,10 @@ h3 {
 
     .site-footer p {
         margin: 0
+    }
+
+    .language-picker {
+        width: 100%;
+        justify-content: space-between
     }
 }
