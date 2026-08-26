@@ -16,6 +16,13 @@ const highlightTranslations = {
   pt: { secure: 'Seguro e privado', secureText: 'Os dados do seu animal estão encriptados e sempre protegidos.', sync: 'Sincronização na nuvem', syncText: 'Aceda aos registos do seu animal a qualquer momento.', reminders: 'Lembretes inteligentes', remindersText: 'Nunca mais se esqueça de uma vacina ou medicamento.' }
 };
 
+const footerTranslations = {
+  es: { copyrightBrand: '© 2026 HandyPet.', copyrightRights: 'Todos los derechos reservados.' },
+  fr: { copyrightBrand: '© 2026 HandyPet.', copyrightRights: 'Tous droits réservés.' },
+  de: { copyrightBrand: '© 2026 HandyPet.', copyrightRights: 'Alle Rechte vorbehalten.' },
+  pt: { copyrightBrand: '© 2026 HandyPet.', copyrightRights: 'Todos os direitos reservados.' }
+};
+
 const supportedLanguages = Object.keys(translations);
 const systemLanguage = (navigator.languages || [navigator.language || 'en'])
   .map((language) => language.toLowerCase().split('-')[0])
@@ -23,7 +30,7 @@ const systemLanguage = (navigator.languages || [navigator.language || 'en'])
 
 const applyLanguage = (language) => {
   const selectedLanguage = supportedLanguages.includes(language) ? language : 'en';
-  const copy = { ...translations[selectedLanguage], ...(highlightTranslations[selectedLanguage] || {}) };
+  const copy = { ...translations[selectedLanguage], ...(highlightTranslations[selectedLanguage] || {}), ...(footerTranslations[selectedLanguage] || { copyrightBrand: '© 2026 HandyPet.', copyrightRights: 'All rights reserved.' }) };
   document.documentElement.lang = selectedLanguage;
   document.querySelectorAll('[data-i18n]').forEach((element) => {
     if (copy[element.dataset.i18n]) element.textContent = copy[element.dataset.i18n];

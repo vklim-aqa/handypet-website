@@ -782,10 +782,11 @@ h3 {
     min-height: 88px;
     background: #edf8f7;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     padding: 0 clamp(28px, 5.7vw, 84px);
-    gap: 30px
+    gap: 16px
 }
 
 .site-footer .brand {
@@ -798,8 +799,8 @@ h3 {
 
 .footer-links {
     display: flex;
-    gap: 55px;
-    margin-left: 9%
+    gap: 32px;
+    margin-left: 3%
 }
 
 .language-picker {
@@ -827,8 +828,20 @@ h3 {
 }
 
 .site-footer p {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
     color: #526172;
-    font-size: 13px
+    flex: 0 1 280px;
+    width: 280px;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: clamp(9px, 1vw, 13px)
 }
 
 .sr-only {
@@ -984,7 +997,8 @@ h3 {
     }
 
     .site-footer p {
-        margin: 0
+        align-items: flex-start;
+        font-size: clamp(9px, 3.2vw, 13px)
     }
 
     .language-picker {
