@@ -34,7 +34,7 @@
 .trust-row b{display:grid!important;place-items:center;width:36px!important;height:36px!important;flex:0 0 36px;font-size:0!important;color:transparent!important;background-color:#e5f4f2!important;background-position:center!important;background-size:20px!important;background-repeat:no-repeat!important;border-radius:50%!important}
 .trust-row span:nth-child(1) b{background-image:url('assets/shield.svg')!important}.trust-row span:nth-child(2) b{background-image:url('assets/cloud.svg')!important}.trust-row span:nth-child(3) b{background-image:url('assets/reminder.svg')!important}
 .mini-brand>span:first-child{display:inline-block!important;width:15px!important;height:15px!important;background:url('assets/paw.svg') center/contain no-repeat!important;font-size:0!important}
-.phone-signup .phone-screen,.phone-dashboard .phone-screen{padding:0;background-position:center;background-repeat:no-repeat;background-size:100% 100%}.phone-signup .phone-screen{background-image:url('assets/screens/home-light-v4.png')}.phone-dashboard .phone-screen{background-image:url('assets/screens/vaccines-light-v3.png?v=2')}.phone-signup .phone-screen>*,.phone-dashboard .phone-screen>*{display:none}
+.phone-signup .phone-screen,.phone-dashboard .phone-screen{padding:0;background-position:center;background-repeat:no-repeat;background-size:100% 100%}.phone-signup .phone-screen{background-image:url('assets/screens/home-light-v4.png')}.phone-dashboard .phone-screen{background-image:url('assets/screens/vaccines-web.jpg?v=1')}.phone-signup .phone-screen>*,.phone-dashboard .phone-screen>*{display:none}
 
 @font-face {
     font-family: Roboto;
