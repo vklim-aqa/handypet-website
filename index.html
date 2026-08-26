@@ -1,51 +1,163 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HandyPet</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="HandyPet keeps your pet's health records, reminders, and care history in one secure place." />
+  <title>HandyPet — Your pet's health, all in one place</title>
+  <link rel="icon" type="image/png" href="assets/app-icon.png" />
+  <link rel="stylesheet" href="styles.css?v=11" />
+  <script src="script.js?v=1" defer></script>
 </head>
 
 <body>
-    <header class="header">
-        <h1>HandyPet</h1>
-        <nav> <a href="#features">Features</a> <a href="privacy.html">Privacy</a> <a href="terms.html">Terms</a> </nav>
-    </header>
-    <main>
-        <section class="hero">
-            <h2>Your pet's health records in one place</h2>
-            <p> Keep track of vaccinations, vet visits, medications and important medical records. </p> <button>Coming
-                Soon</button>
-        </section>
-        <section id="features" class="features">
-            <h2>Everything your pet needs</h2>
-            <div class="feature-grid">
-                <div class="feature">
-                    <h3>Vaccinations</h3>
-                    <p>Track vaccines and upcoming due dates.</p>
-                </div>
-                <div class="feature">
-                    <h3>Vet Visits</h3>
-                    <p>Keep your veterinary visit history organized.</p>
-                </div>
-                <div class="feature">
-                    <h3>Medications</h3>
-                    <p>Manage medications and treatment history.</p>
-                </div>
-                <div class="feature">
-                    <h3>Medical Records</h3>
-                    <p>Store important health information in one place.</p>
-                </div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="HandyPet home">
+      <span class="brand-paw" aria-hidden="true">✣</span>
+      <span>Handy<span>Pet</span></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#features">Features</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </header>
+
+  <main id="top">
+      <section class="hero" id="download" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Care, connected</p>
+        <h1 id="hero-title">Your pet’s health<br />records in one place</h1>
+        <p class="hero-lede">Track vaccinations, vet visits, medications, and medical records—all in one secure place.
+          Stay organized and keep your pet happy and healthy.</p>
+        <div class="download-actions" aria-label="Download HandyPet">
+          <a class="button button-primary" href="#download"><span class="store-icon">▣</span>Download for Android</a>
+          <a class="button button-outline" href="#download"><span class="apple-icon">●</span>Download for iOS</a>
+        </div>
+        <div class="trust-row" aria-label="HandyPet benefits">
+          <span><b>♢</b> Secure &amp; Private</span>
+          <span><b>⌁</b> Cloud Sync</span>
+          <span><b>♙</b> Your data, always yours</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="HandyPet app previews">
+        <div class="soft-shape shape-one"></div>
+        <div class="soft-shape shape-two"></div>
+        <span class="paw-spark spark-one">✣</span>
+        <span class="paw-spark spark-two">✣</span>
+        <div class="phone phone-signup">
+          <div class="phone-screen">
+            <div class="status"><span>3:21 ◉</span><span>▴ ▪ ▰</span></div>
+            <div class="mini-brand"><span>✣</span> Handy<span>Pet</span></div>
+            <div class="segmented"><span>↪ &nbsp; Sign in</span><strong>✓ &nbsp; Create<br />Account</strong></div>
+            <div class="info-box"><b>♢ &nbsp; Create your Handy Pet account</b><small>Create your account to save your
+                pet passport securely and sync it after sign-in.</small></div>
+            <div class="input">▣ &nbsp; Full Name</div>
+            <div class="input">✉ &nbsp; Email</div>
+            <div class="requirements"><b>♙ &nbsp; Password requirements</b><small>• At least 8 characters<br />• Include
+                letters and numbers</small></div>
+            <div class="input focused">♙ &nbsp; Password <span>◉</span></div>
+            <div class="input">♙ &nbsp; Confirm password <span>◉</span></div>
+            <div class="mini-button">♟ &nbsp; Create Account</div>
+            <div class="or"><i></i>or<i></i></div>
+            <div class="google">G &nbsp; Continue with Google</div>
+          </div>
+        </div>
+        <div class="phone phone-dashboard">
+          <div class="phone-screen">
+            <div class="status"><span>4:33</span><span>▴ ▪ ▰</span></div>
+            <div class="dash-top"><span class="circle">‹</span><b>Sonya</b><span class="top-actions">⌁ &nbsp;⋮</span>
             </div>
-        </section>
-    </main>
-    <footer>
-        <p>© 2026 HandyPet</p>
-        <div> <a href="privacy.html">Privacy Policy</a> <a href="terms.html">Terms of Use</a> <a
-                href="support.html">Support</a> </div>
-    </footer>
+            <div class="pet-card">
+              <div class="pet-avatar">🐶</div>
+              <div><b>Sonya</b><small>Golden Retriever • 4 yrs</small></div>
+              <div class="pet-stats"><b>5<small>VACCINES</small></b><b>2<small>VISITS</small></b><b>0<small>ACTIVE
+                    MEDS</small></b></div>
+            </div>
+            <div class="pet-chips"><b>✣ Sonya</b><span>✣ Kiki</span><span>✣ Hammy</span><span>✣
+                Bronnie</span><span>•••</span></div>
+            <div class="tabs"><b>♜<small>Vet
+                  Visits</small></b><span>♜<small>Vaccines</small></span><span>▣<small>Medications</small></span><span>▤<small>Health
+                  Records</small></span></div>
+            <div class="section-title"><b>Vet Visits</b><strong>＋ Log Visit</strong></div>
+            <div class="visit"><small>May 24<br /><em>2024</em></small><i>▣</i>
+              <div><b>Annual Checkup</b><span>Wellness Exam<br />All visits normal. Weight is healthy.</span></div>
+              <mark>Completed</mark><b>⋮</b>
+            </div>
+            <div class="visit"><small>Mar 18<br /><em>2024</em></small><i class="red">♢</i>
+              <div><b>Vaccination</b><span>Rabies (1yr)<br />Rabies vaccine administered.</span></div>
+              <mark>Completed</mark><b>⋮</b>
+            </div>
+            <div class="visit"><small>Jan 05<br /><em>2024</em></small><i class="purple">♜</i>
+              <div><b>Diagnostic</b><span>Bloodwork<br />Routine blood panel.</span></div><mark>Completed</mark><b>⋮</b>
+            </div>
+            <div class="visit"><small>Nov 12<br /><em>2023</em></small><i class="orange">♧</i>
+              <div><b>Skin Concern</b><span>Hot Spot<br />Minor hot spot on tail.</span></div><mark
+                class="received">Received</mark><b>⋮</b>
+            </div>
+            <div class="bottom-nav">
+              <span>⌂<small>Home</small></span><b>✣<small>Pets</small></b><span>♙<small>Account</small></span><span>⚙<small>Settings</small></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features feature-showcase" id="features" aria-labelledby="features-title">
+      <h2 id="features-title" class="sr-only">HandyPet features</h2>
+      <article class="feature-card">
+        <div class="feature-icon teal">♢</div>
+        <h3>Vaccinations</h3>
+        <p>Track vaccines and never miss an important dose.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon blue">▣</div>
+        <h3>Vet Visits</h3>
+        <p>Log visits and keep a history of your pet’s health.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon purple">⌕</div>
+        <h3>Medications</h3>
+        <p>Manage medications and set helpful reminders.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon slate">▤</div>
+        <h3>Medical Records</h3>
+        <p>Store test results and records in one secure place.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon weight"></div>
+        <h3>Weight Logging</h3>
+        <p>Track weight changes over time and follow your pet’s progress.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon documents"></div>
+        <h3>Document Uploads</h3>
+        <p>Upload and organize important pet documents securely.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon export"></div>
+        <h3>Health Record Exports</h3>
+        <p>Export your pet’s complete health history as a convenient PDF.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon reminder"></div>
+        <h3>Custom Reminders</h3>
+        <p>Schedule pet reminders for the exact date and time you choose.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="#top"><span class="brand-paw"
+        aria-hidden="true">✣</span><span>Handy<span>Pet</span></span></a>
+    <div class="footer-links"><a id="privacy" href="privacy.html">Privacy Policy</a><a id="terms"
+        href="terms.html">Terms of Use</a><a href="mailto:support@handypet.app">Support</a></div>
+    <p>© 2026 HandyPet. All rights reserved.</p>
+  </footer>
 </body>
 
 </html>
