@@ -8,8 +8,8 @@
     content="HandyPet keeps your pet's health records, reminders, and care history in one secure place." />
   <title>HandyPet — Your pet's health, all in one place</title>
   <link rel="icon" type="image/png" href="assets/icon-white.png" />
-  <link rel="stylesheet" href="styles.css?v=26" />
-  <script src="script.js?v=1" defer></script>
+  <link rel="stylesheet" href="styles.css?v=32" />
+  <script src="script.js?v=4" defer></script>
 </head>
 
 <body>
@@ -127,16 +127,46 @@
       </div>
     </section>
 
+    <section class="export-section" aria-labelledby="export-title">
+      <div class="export-copy">
+        <span class="export-kicker" data-i18n="exportKicker">PDF EXPORT</span>
+        <h2 id="export-title" data-i18n="exportTitle">Export your pet&apos;s health record</h2>
+        <p data-i18n="exportText">Keep all important health information in one place and export it as a clean PDF anytime — perfect for vet visits, travel, or sharing with a new clinic.</p>
+        <ul class="export-checklist">
+          <li data-i18n="exportProfile">Pet profile</li>
+          <li data-i18n="exportRecords">Medical records</li>
+          <li data-i18n="exportVaccinations">Vaccinations</li>
+          <li data-i18n="exportWeight">Weight history</li>
+          <li data-i18n="exportVisits">Vet visits</li>
+          <li data-i18n="exportMedications">Active medications</li>
+        </ul>
+        <small class="export-note" data-i18n="exportNote">One tap. One complete health record.</small>
+      </div>
+      <div class="export-preview" aria-label="Sample pet health record preview">
+        <div class="export-page export-page-back"><span>HandyPet</span><b>Health summary</b></div>
+        <div class="export-page export-page-front">
+          <span>HandyPet</span>
+          <h3>Sonya&apos;s Health Record</h3>
+          <small>Dog · Retriever · Health record</small>
+          <hr />
+          <b>Profile</b><i>Weight&nbsp;&nbsp;&nbsp;7.0 kg</i><i>Vaccinations&nbsp;&nbsp;&nbsp;1 upcoming</i><i>Vet visits&nbsp;&nbsp;&nbsp;4 records</i>
+        </div>
+        <div class="export-note-bubble">Clean, professional<br />and ready to share!</div>
+        <svg class="export-doodle" viewBox="0 0 140 78" aria-hidden="true">
+          <path class="doodle-arrow" d="M132 10 C103 28, 79 51, 31 43" />
+          <path class="doodle-arrow" d="M31 43 L43 32 M31 43 L47 48" />
+          <path class="doodle-heart" d="M12 17 C5 8, -2 20, 13 31 C28 18, 22 7, 12 17 Z" />
+        </svg>
+      </div>
+    </section>
+
     <section class="language-support" aria-labelledby="language-support-title">
       <div class="language-globe" aria-hidden="true">
         <span class="globe-mark"></span>
-        <span class="language-bubble bubble-one">Hola</span>
-        <span class="language-bubble bubble-two">Bonjour</span>
-        <span class="language-bubble bubble-three">Olá</span>
       </div>
       <div class="language-support-copy">
-        <h2 id="language-support-title" data-i18n="languageTitle">HandyPet speaks your language</h2>
-        <p data-i18n-html="languageText">We&apos;re proud to support pet parents around the world.<br />Use HandyPet in the language that&apos;s most comfortable for you.</p>
+        <span class="language-badge" data-i18n="languageBadge">5 LANGUAGES</span>
+        <h2 id="language-support-title" data-i18n="languageTitle">Available in 5 languages</h2>
       </div>
       <div class="language-list" aria-label="Supported languages">
         <span class="language-pill"><i class="country-flag flag-us" aria-hidden="true"></i>English</span>
