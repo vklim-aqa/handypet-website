@@ -585,11 +585,11 @@
 }
 
 .phone-signup .phone-screen {
-    background-image: url('assets/screens/home-light-v4.png')
+    background-image: url('assets/screens/home-light-v5.png')
 }
 
 .phone-dashboard .phone-screen {
-    background-image: url('assets/screens/vaccines-web.jpg?v=1')
+    background-image: url('assets/screens/vaccines-light-v5.png')
 }
 
 .phone-signup .phone-screen>*,
@@ -886,17 +886,17 @@ body {
 }
 
 .phone-signup {
-    width: 276px;
+    width: 288px;
     height: 616px;
-    left: 22%;
+    left: calc(50% - 308px);
     top: 0;
     transform: rotate(-1deg)
 }
 
 .phone-dashboard {
-    width: 307px;
+    width: 288px;
     height: 615px;
-    right: 4%;
+    right: calc(50% - 308px);
     top: 4px;
     transform: rotate(1.1deg)
 }
@@ -1414,6 +1414,67 @@ h3 {
     border: 0
 }
 
+@media(max-width:1320px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 20px
+    }
+
+    .hero-copy {
+        padding-top: 35px;
+        text-align: center
+    }
+
+    .hero-copy .eyebrow,
+    .hero-copy h1,
+    .hero-copy .hero-lede {
+        text-align: center
+    }
+
+    .hero-copy h1 {
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    .hero-lede {
+        margin: auto
+    }
+
+    .download-actions,
+    .trust-row {
+        justify-content: center
+    }
+
+    .trust-row {
+        width: min(100%, 900px);
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    .trust-row .trust-item {
+        align-items: center !important;
+        text-align: center
+    }
+
+    .trust-row .trust-copy {
+        align-items: center;
+        text-align: center
+    }
+
+    .hero-visual {
+        height: 650px;
+        margin-top: 64px
+    }
+
+    .phone-signup {
+        left: calc(50% - 308px)
+    }
+
+    .phone-dashboard {
+        right: calc(50% - 308px)
+    }
+}
+
 @media(max-width:1000px) {
     .site-header {
         height: auto;
@@ -1456,11 +1517,11 @@ h3 {
     }
 
     .phone-signup {
-        left: calc(50% - 205px)
+        left: calc(50% - 308px)
     }
 
     .phone-dashboard {
-        right: calc(50% - 255px)
+        right: calc(50% - 308px)
     }
 
     .features {
