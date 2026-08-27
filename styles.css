@@ -867,6 +867,75 @@ body {
     top: 370px
 }
 
+.hero-message {
+    position: absolute;
+    right: -20px;
+    top: 125px;
+    z-index: 0;
+    display: grid;
+    place-items: center;
+    width: 190px;
+    height: 245px;
+    padding: 28px 24px 58px;
+    border-radius: 47% 53% 44% 56% / 52% 43% 57% 48%;
+    background: rgba(224, 245, 240, .92);
+    color: #173253;
+    transform: rotate(-4deg);
+    pointer-events: none
+}
+
+.hero-message p {
+    margin: 0;
+    font-family: "Segoe Print", "Comic Sans MS", cursive;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.35;
+    text-align: center
+}
+
+.hero-message svg {
+    position: absolute;
+    left: 23px;
+    bottom: 20px;
+    width: 105px;
+    height: 70px;
+    overflow: visible;
+    fill: none;
+    stroke: #159d82;
+    stroke-width: 2.7;
+    stroke-linecap: round;
+    stroke-linejoin: round
+}
+
+.hero-paw {
+    position: absolute;
+    z-index: 0;
+    display: block;
+    width: 34px;
+    height: 34px;
+    background: url('assets/paw.svg') center/contain no-repeat;
+    opacity: .24;
+    pointer-events: none
+}
+
+.hero-paw-one {
+    right: 112px;
+    top: 370px;
+    transform: rotate(-14deg)
+}
+
+.hero-paw-two {
+    right: 40px;
+    top: 420px;
+    transform: rotate(12deg) scale(.86)
+}
+
+.hero-paw-three {
+    right: -5px;
+    top: 345px;
+    transform: rotate(22deg) scale(1.08)
+}
+
 .phone {
     position: absolute;
     background: #0b1113;
@@ -890,7 +959,7 @@ body {
     height: 616px;
     left: calc(50% - 308px);
     top: 0;
-    transform: rotate(-1deg)
+    transform: rotate(-4.5deg)
 }
 
 .phone-dashboard {
@@ -898,7 +967,7 @@ body {
     height: 615px;
     right: calc(50% - 308px);
     top: 4px;
-    transform: rotate(1.1deg)
+    transform: rotate(4.5deg)
 }
 
 .phone-screen {
@@ -1796,6 +1865,11 @@ h3 {
 }
 
 @media(max-width:1000px) {
+    .hero-message,
+    .hero-paw {
+        display: none
+    }
+
     .site-header {
         height: auto;
         flex-wrap: wrap;
