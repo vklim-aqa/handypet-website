@@ -1760,9 +1760,14 @@ body {
     height: 34px;
     flex: 0 0 34px;
     overflow: hidden;
-    border: 1px solid rgba(21, 59, 56, .12);
+    clip-path: circle(50%);
+    border: 0;
     border-radius: 50%;
-    box-shadow: 0 1px 2px rgba(21, 59, 56, .12)
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .38),
+        inset -2px -3px 4px rgba(19, 48, 57, .28),
+        0 4px 7px rgba(21, 59, 56, .2);
+    transform: perspective(90px) rotateX(2deg);
+    transform-style: preserve-3d
 }
 
 .flag-us {
