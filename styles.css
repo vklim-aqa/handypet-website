@@ -1289,6 +1289,154 @@ body {
     background: #fff
 }
 
+.language-support {
+    display: grid;
+    grid-template-columns: 210px minmax(250px, 1fr) minmax(430px, 1.35fr);
+    align-items: center;
+    gap: 28px;
+    min-height: 150px;
+    margin: 0 clamp(28px, 5.7vw, 84px) 22px;
+    padding: 18px 28px;
+    border: 1px solid #dceae8;
+    border-radius: 16px;
+    background: linear-gradient(105deg, #f5fbfa, #fff);
+    overflow: hidden
+}
+
+.language-globe {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 112px
+}
+
+.globe-mark {
+    position: relative;
+    display: block;
+    width: 102px;
+    height: 102px;
+    border: 3px solid #65c4bd;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 28%, #c7efeb 0 10%, transparent 11%),
+        linear-gradient(145deg, #a9e3de, #58b9b1);
+    box-shadow: inset -11px -8px 0 rgba(35, 143, 137, .18), 0 8px 18px rgba(47, 150, 145, .16)
+}
+
+.globe-mark::before,
+.globe-mark::after {
+    content: "";
+    position: absolute;
+    inset: 8px 23px;
+    border: 2px solid rgba(255, 255, 255, .72);
+    border-radius: 50%
+}
+
+.globe-mark::after {
+    inset: 23px 8px;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    transform: rotate(-24deg)
+}
+
+.language-bubble {
+    position: absolute;
+    padding: 5px 9px;
+    border: 1px solid #d9e8e6;
+    border-radius: 8px;
+    background: #fff;
+    color: var(--teal-dark);
+    font-size: 11px;
+    font-weight: 700;
+    box-shadow: 0 3px 8px rgba(21, 59, 56, .08)
+}
+
+.bubble-one { left: 5px; top: 18px }
+.bubble-two { right: 2px; top: 5px }
+.bubble-three { right: 14px; bottom: 11px }
+
+.language-support-copy h2 {
+    margin: 0 0 10px;
+    color: var(--ink);
+    font-size: 23px
+}
+
+.language-support-copy p {
+    margin: 0;
+    color: var(--body);
+    font-size: 14px;
+    line-height: 1.55
+}
+
+.language-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px
+}
+
+.language-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 42px;
+    padding: 0 14px;
+    border: 1px solid #dce8e7;
+    border-radius: 8px;
+    background: #fff;
+    color: #28454c;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    box-shadow: 0 2px 7px rgba(21, 59, 56, .05)
+}
+
+.language-pill i {
+    font-style: normal;
+    line-height: 1
+}
+
+.country-flag {
+    position: relative;
+    display: inline-block;
+    width: 22px;
+    height: 15px;
+    flex: 0 0 22px;
+    overflow: hidden;
+    border: 1px solid rgba(21, 59, 56, .12);
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(21, 59, 56, .12)
+}
+
+.flag-us {
+    background: repeating-linear-gradient(to bottom, #c94b58 0 1.15px, #fff 1.15px 2.3px)
+}
+
+.flag-us::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 9px;
+    height: 8px;
+    background: #31527e
+}
+
+.flag-es {
+    background: linear-gradient(to bottom, #c9454d 0 25%, #f5c84b 25% 75%, #c9454d 75% 100%)
+}
+
+.flag-de {
+    background: linear-gradient(to bottom, #242b32 0 33.33%, #bd4b50 33.33% 66.66%, #e1b84c 66.66% 100%)
+}
+
+.flag-fr {
+    background: linear-gradient(to right, #456bb0 0 33.33%, #fff 33.33% 66.66%, #d95762 66.66% 100%)
+}
+
+.flag-pt {
+    background: linear-gradient(to right, #2f936d 0 40%, #d74f55 40% 100%)
+}
+
 .feature-card {
     background: #fff;
     border: 1px solid #e0e9e7;
@@ -1528,6 +1676,17 @@ h3 {
         grid-template-columns: repeat(2, 1fr)
     }
 
+    .language-support {
+        grid-template-columns: 150px minmax(0, 1fr);
+        gap: 18px;
+        padding: 18px 20px
+    }
+
+    .language-list {
+        grid-column: 1 / -1;
+        justify-content: center
+    }
+
     .footer-links {
         margin-left: 0
     }
@@ -1597,6 +1756,31 @@ h3 {
         grid-template-columns: 1fr;
         padding-left: 20px;
         padding-right: 20px
+    }
+
+    .language-support {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 22px 16px;
+        text-align: center
+    }
+
+    .language-globe {
+        min-height: 92px
+    }
+
+    .globe-mark {
+        font-size: 78px
+    }
+
+    .language-support-copy h2 {
+        font-size: 21px
+    }
+
+    .language-list {
+        justify-content: center
     }
 
     .feature-card {
