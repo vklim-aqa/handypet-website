@@ -644,6 +644,40 @@
     background-image: url('assets/screens/vaccines-light-v5.png')
 }
 
+/* The English screenshots above are the default. Each translated app locale
+   gets its own home and vaccines screenshots when the language is switched. */
+html[lang="es"] .phone-signup .phone-screen {
+    background-image: url('assets/screens/spanish-home-v1.png')
+}
+
+html[lang="es"] .phone-dashboard .phone-screen {
+    background-image: url('assets/screens/spanish-vaccines-v1.png')
+}
+
+html[lang="fr"] .phone-signup .phone-screen {
+    background-image: url('assets/screens/french-home-v1.png')
+}
+
+html[lang="fr"] .phone-dashboard .phone-screen {
+    background-image: url('assets/screens/french-vac-v1.png')
+}
+
+html[lang="de"] .phone-signup .phone-screen {
+    background-image: url('assets/screens/de-home-v1.png')
+}
+
+html[lang="de"] .phone-dashboard .phone-screen {
+    background-image: url('assets/screens/de-vac-v1.png')
+}
+
+html[lang="pt"] .phone-signup .phone-screen {
+    background-image: url('assets/screens/por-home-v1.png')
+}
+
+html[lang="pt"] .phone-dashboard .phone-screen {
+    background-image: url('assets/screens/por-vac-v1.png')
+}
+
 .phone-signup .phone-screen>*,
 .phone-dashboard .phone-screen>* {
     display: none
