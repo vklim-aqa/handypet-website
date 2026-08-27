@@ -133,3 +133,25 @@ if (cards.length && showcase) {
     startShowcase();
   }
 }
+
+const scrollRevealSections = [...document.querySelectorAll('.export-section, .language-support')];
+scrollRevealSections.forEach((section) => section.classList.add('scroll-reveal'));
+
+if (scrollRevealSections.length) {
+  const showSection = (section) => section.classList.add('is-visible');
+
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    scrollRevealSections.forEach(showSection);
+  } else {
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          showSection(entry.target);
+          sectionObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+
+    scrollRevealSections.forEach((section) => sectionObserver.observe(section));
+  }
+}
