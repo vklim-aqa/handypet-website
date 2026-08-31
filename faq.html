@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description"
+    content="Answers to frequently asked questions about HandyPet, including accounts, Pro features, reminders, subscriptions, and data.">
+  <title>HandyPet FAQ &mdash; HandyPet</title>
+  <link rel="icon" type="image/png" href="assets/icon-white.png">
+  <link rel="stylesheet" href="styles.css?v=25">
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="HandyPet home"><span class="brand-paw"
+        aria-hidden="true"></span><span>Handy<span>Pet</span></span></a>
+  </header>
+  <main class="legal">
+    <div class="legal-navigation">
+      <a class="legal-back" href="index.html" aria-label="Back to HandyPet home">&larr; Back to home</a>
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li aria-current="page">FAQ</li>
+        </ol>
+      </nav>
+    </div>
+    <article class="legal-document">
+      <h1 id="handypet-faq">Handy Pet FAQ</h1>
+
+      <h2 id="what-is-handy-pet">What is Handy Pet?</h2>
+      <p>Handy Pet is a pet health record app for organizing vaccinations, weight entries, vet visits, medications, medical records, reminders, documents, and other information for your pets.</p>
+
+      <h2 id="do-i-need-an-account">Do I need an account?</h2>
+      <p>Yes. You must sign in to use the app. Signing in also backs up your pet data and allows it to sync across devices.</p>
+
+      <h2 id="how-can-i-create-or-access-an-account">How can I create or access an account?</h2>
+      <p>You can:</p>
+      <ul>
+        <li>Create an account with an email address and password.</li>
+        <li>Sign in or register with Google.</li>
+      </ul>
+      <p>If you forget an email-account password, choose <strong>Forgot password?</strong> on the sign-in sheet. Handy Pet sends a reset link without revealing whether an account exists. If you created the account with Google, use <strong>Continue with Google</strong> instead.</p>
+
+      <h2 id="what-password-rules-apply">What password rules apply?</h2>
+      <p>Email-account passwords must contain at least eight characters, one letter, and one number. The same rules apply when changing your password.</p>
+
+      <h2 id="is-handy-pet-free">Is Handy Pet free?</h2>
+      <p>Handy Pet includes a free plan. When Pro enforcement is enabled, the first pet, vaccination tracking, and weight tracking are available on the free plan. Pro features are controlled by the app's purchase configuration and entitlement status.</p>
+
+      <h2 id="what-does-handy-pet-pro-unlock">What does Handy Pet Pro unlock?</h2>
+      <p>When Pro access is active, you can:</p>
+      <ul>
+        <li>Add additional pets.</li>
+        <li>Create and edit vet visits, medications, medical records, reminders, and documents.</li>
+        <li>Upload or replace document files in cloud storage.</li>
+        <li>Export selected health records as a PDF.</li>
+      </ul>
+      <p>PDF exports let you choose which record sections to include. Documents are kept in the app but are not included as an export section. Vet-visit costs are excluded unless you explicitly select <strong>Include cost</strong>.</p>
+
+      <h2 id="how-many-pets-can-i-add">How many pets can I add?</h2>
+      <p>The free plan supports one pet. Adding a second or later pet requires Pro when entitlement enforcement is enabled. Basic editing of an existing pet profile remains available. In the current production configuration, Pro enforcement is disabled until the live purchase provider is connected.</p>
+
+      <h2 id="can-i-add-historical-or-future-information">Can I add historical or future information?</h2>
+      <p>Yes. Vaccinations and weight entries can be historical. Pro users can also add supported historical records such as vet visits, medications, and medical records, as well as future vet visits and reminders. Reminder dates cannot be saved in the past.</p>
+
+      <h2 id="what-happens-if-pro-access-ends">What happens to my data if Pro access ends?</h2>
+      <p>Your existing Pro-only records remain available to view. You can still delete records, download existing document files, and complete one-way actions such as completing a visit, ending a medication, or disabling a reminder. Creating, duplicating, editing, replacing document files, and exporting require Pro. Reopening or reactivating those completed or disabled items requires Pro.</p>
+
+      <h2 id="are-notifications-required">Are notifications required?</h2>
+      <p>No. Saving a record remains possible when notifications are disabled or permission is denied. If enabled, Handy Pet can notify you about upcoming vaccinations, vet visits, medications, and reminders. Related alerts may be combined into a digest notification; tapping it opens Home with Today selected.</p>
+      <p>You can enable notifications in Settings. If the operating system has denied permission, Handy Pet provides a link to the device settings.</p>
+
+      <h2 id="how-do-reminders-work">How do reminders work?</h2>
+      <p>Reminders require a date and time. A newly created or edited reminder uses its saved local time. Older reminders may use the configured default reminder time until they are edited. Reminder notifications can be scheduled for the selected time or according to the configured reminder offset.</p>
+
+      <h2 id="can-i-manage-my-subscription">Can I manage my subscription?</h2>
+      <p>The Account section provides the Pro status, available plans, purchase, restore-purchase, and subscription-management actions when the purchase backend is enabled. The current production configuration does not yet connect a live purchase provider; release builds therefore do not offer live Pro purchases. Debug builds use a test purchase service.</p>
+
+      <h2 id="can-i-restore-a-previous-pro-purchase">Can I restore a previous Pro purchase?</h2>
+      <p>Yes, when a purchase backend is configured. Use <strong>Restore purchases</strong> in the Pro status or purchase screen. A successful restore reactivates the entitlement associated with the account or store purchase.</p>
+
+      <h2 id="can-i-delete-my-account">Can I delete my account?</h2>
+      <p>Yes. Account deletion is available in Settings. It permanently removes the account, local data, synced cloud data, pet records, and associated documents. The action cannot be undone and may require password reauthentication.</p>
+
+      <h2 id="is-handy-pet-a-replacement-for-a-veterinarian">Is Handy Pet a replacement for a veterinarian?</h2>
+      <p>No. Handy Pet only helps you organize and manage information. It does not provide veterinary diagnosis or treatment and is not a substitute for professional veterinary advice.</p>
+    </article>
+  </main>
+  <script>
+    const faqDocument = document.querySelector('.legal-document');
+    const faqQuestions = [...faqDocument.querySelectorAll('h2')];
+
+    faqQuestions.forEach((question) => {
+      const item = document.createElement('details');
+      item.className = 'faq-item';
+
+      const summary = document.createElement('summary');
+      summary.id = question.id;
+      summary.textContent = question.textContent;
+
+      const answer = document.createElement('div');
+      answer.className = 'faq-answer';
+      item.append(summary, answer);
+
+      let node = question.nextElementSibling;
+      while (node && node.tagName !== 'H2') {
+        const nextNode = node.nextElementSibling;
+        answer.appendChild(node);
+        node = nextNode;
+      }
+
+      question.replaceWith(item);
+    });
+  </script>
+</body>
+
+</html>
