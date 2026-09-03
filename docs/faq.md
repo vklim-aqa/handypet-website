@@ -62,6 +62,10 @@ Reminders require a date and time. A newly created or edited reminder uses its s
 
 The Account section provides the Pro status, available plans, purchase, restore-purchase, and subscription-management actions when the purchase backend is enabled. The current production configuration does not yet connect a live purchase provider; release builds therefore do not offer live Pro purchases. Debug builds use a test purchase service.
 
+## How do I cancel my subscription?
+
+Open **Manage subscription** from the Pro status or purchase screen in the Account section. Handy Pet opens the subscription settings for the store where you subscribed. Follow the store's instructions to cancel before your next renewal date. Uninstalling Handy Pet does not cancel a subscription. After cancellation, Pro access normally remains available until the end of the current billing period.
+
 ## Can I restore a previous Pro purchase?
 
 Yes, when a purchase backend is configured. Use **Restore purchases** in the Pro status or purchase screen. A successful restore reactivates the entitlement associated with the account or store purchase.
