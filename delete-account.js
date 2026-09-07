@@ -1,5 +1,5 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js';
-import { EmailAuthProvider, GoogleAuthProvider, getAuth, getIdTokenResult, onAuthStateChanged, reauthenticateWithCredential, reauthenticateWithPopup, signInWithEmailAndPassword, signInWithPopup, signOut } from 'https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js';
+import { EmailAuthProvider, GoogleAuthProvider, deleteUser, getAdditionalUserInfo, getAuth, getIdTokenResult, onAuthStateChanged, reauthenticateWithCredential, reauthenticateWithPopup, signInWithEmailAndPassword, signInWithPopup, signOut } from 'https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js';
 import { getFunctions, httpsCallable } from 'https://www.gstatic.com/firebasejs/12.18.0/firebase-functions.js';
 import { firebaseConfig } from './firebase-config.js';
 
@@ -123,10 +123,25 @@ signInForm.addEventListener('submit', async (event) => {
 $('#google-sign-in').addEventListener('click', async () => {
   showStatus('Opening Google sign-in…');
   try {
-    await signInWithPopup(auth, createGoogleProvider());
+    const result = await signInWithPopup(auth, createGoogleProvider());
+    const additionalUserInfo = getAdditionalUserInfo(result);
+    if (additionalUserInfo?.isNewUser) {
+      try {
+        await deleteUser(result.user);
+      } catch (cleanupError) {
+        await signOut(auth);
+        throw cleanupError;
+      }
+      showStatus('No HandyPet account exists for this Google account. Create an account in the HandyPet app first.', true);
+      return;
+    }
     showStatus('Signed in. Review the deletion information below.');
-  } catch (_) {
-    showStatus('We could not sign you in with Google. Please try again.', true);
+  } catch (error) {
+    if (error?.code === 'auth/user-token-expired' || error?.code === 'auth/requires-recent-login') {
+      showStatus('We could not verify this Google account. Please try again.', true);
+    } else {
+      showStatus('We could not sign you in with Google. Please try again.', true);
+    }
   }
 });
 
