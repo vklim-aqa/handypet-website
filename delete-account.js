@@ -14,6 +14,7 @@ const status = $('#status');
 const reauthModal = $('#reauth-modal');
 const reauthForm = $('#reauth-form');
 const reauthPassword = $('#reauth-password');
+const successPanel = $('#success-panel');
 let deletionCompleted = false;
 
 function requestPasswordReauthentication() {
@@ -146,7 +147,8 @@ deletionForm.addEventListener('submit', async (event) => {
       await signOut(auth);
       deletionCompleted = true;
       setAuthenticatedState(null);
-      showStatus('Your account-deletion request was accepted. You have been signed out. Your HandyPet cloud data and account will be removed by the deletion service. This page can now be closed.');
+      status.hidden = true;
+      successPanel.hidden = false;
     } catch (signOutError) {
       console.error('Account deletion was accepted, but sign-out failed:', signOutError);
       showStatus('Your account-deletion request was accepted, but we could not sign you out automatically. Please click Sign out now.', true);

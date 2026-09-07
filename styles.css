@@ -548,6 +548,11 @@
 .delete-status { min-height: 25px; margin: 22px 0 0; color: var(--teal-dark); font-weight: 700; line-height: 1.5 }
 .delete-status[data-error="true"] { color: #b53c38 }
 .delete-footnote { margin: 28px 0 0; padding-top: 22px; border-top: 1px solid var(--line); font-size: 14px }
+.delete-navigation { margin-bottom: 34px }
+.delete-success { padding: 26px 0 4px; border-top: 1px solid var(--line) }
+.delete-success h2 { margin: 0 0 10px; color: var(--ink); font-size: 26px }
+.delete-success p { margin: 0 0 22px; color: var(--body); line-height: 1.65 }
+.delete-home-button { display: inline-flex; width: auto; min-width: 160px; align-items: center; justify-content: center; text-decoration: none }
 .reauth-modal { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; padding: 20px; background: rgba(21, 59, 56, .48) }
 .reauth-modal[hidden] { display: none }
 .reauth-card { width: min(100%, 460px); padding: 32px; border-radius: 18px; background: #fff; box-shadow: 0 22px 60px rgba(21, 59, 56, .24) }

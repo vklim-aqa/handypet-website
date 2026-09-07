@@ -15,6 +15,9 @@
   </header>
   <main class="delete-main">
     <section class="delete-card" aria-labelledby="delete-title">
+      <div class="delete-navigation">
+        <a class="legal-back" href="index.html" aria-label="Back to HandyPet home">&larr; Back to home</a>
+      </div>
       <div class="delete-icon" aria-hidden="true">×</div>
       <p class="eyebrow">Account settings</p>
       <h1 id="delete-title">Delete your HandyPet account</h1>
@@ -43,6 +46,11 @@
       </section>
 
       <p id="status" class="delete-status" role="status" aria-live="polite"></p>
+      <section id="success-panel" class="delete-success" hidden aria-labelledby="success-title">
+        <h2 id="success-title">Request accepted</h2>
+        <p>Your account-deletion request was accepted. You have been signed out. Your HandyPet cloud data and account will be removed by the deletion service.</p>
+        <a class="delete-button delete-button-primary delete-home-button" href="index.html">Back to home</a>
+      </section>
       <p class="delete-footnote">Deletion is processed asynchronously. It does not automatically cancel an Apple App Store or Google Play subscription.</p>
     </section>
   </main>
