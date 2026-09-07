@@ -549,6 +549,7 @@
 .delete-status[data-error="true"] { color: #b53c38 }
 .delete-footnote { margin: 28px 0 0; padding-top: 22px; border-top: 1px solid var(--line); font-size: 14px }
 .reauth-modal { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; padding: 20px; background: rgba(21, 59, 56, .48) }
+.reauth-modal[hidden] { display: none }
 .reauth-card { width: min(100%, 460px); padding: 32px; border-radius: 18px; background: #fff; box-shadow: 0 22px 60px rgba(21, 59, 56, .24) }
 .reauth-card h2 { margin: 0 0 10px; color: var(--ink); font-size: 28px }
 .reauth-card p:not(.eyebrow) { color: var(--body); line-height: 1.6 }
