@@ -1,0 +1,47 @@
+name: Deploy website
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Generate Firebase config
+        env:
+          FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY }}
+        run: |
+          test -n "$FIREBASE_API_KEY"
+          cat > firebase-config.js <<EOF
+          export const firebaseConfig = {
+            apiKey: '$FIREBASE_API_KEY',
+            authDomain: 'handypet-production.firebaseapp.com',
+            projectId: 'handypet-production',
+            storageBucket: 'handypet-production.firebasestorage.app',
+            messagingSenderId: '1020124228886',
+            appId: '1:1020124228886:web:a025a1e1a9b1c0848c3437',
+            measurementId: 'G-CHFQYXW13Y'
+          };
+          EOF
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
