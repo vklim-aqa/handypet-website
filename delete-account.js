@@ -16,6 +16,7 @@ const reauthForm = $('#reauth-form');
 const reauthPassword = $('#reauth-password');
 const successPanel = $('#success-panel');
 let deletionCompleted = false;
+let googleSignInInProgress = false;
 
 function createGoogleProvider() {
   const provider = new GoogleAuthProvider();
@@ -95,7 +96,7 @@ function showStatus(message, isError = false) {
 }
 
 function setAuthenticatedState(user) {
-  if (deletionCompleted) {
+  if (deletionCompleted || googleSignInInProgress) {
     $('#signed-out-panel').hidden = true;
     $('#authenticated-panel').hidden = true;
     return;
@@ -121,6 +122,7 @@ signInForm.addEventListener('submit', async (event) => {
 });
 
 $('#google-sign-in').addEventListener('click', async () => {
+  googleSignInInProgress = true;
   showStatus('Opening Google sign-in…');
   try {
     const result = await signInWithPopup(auth, createGoogleProvider());
@@ -132,11 +134,17 @@ $('#google-sign-in').addEventListener('click', async () => {
         await signOut(auth);
         throw cleanupError;
       }
+      googleSignInInProgress = false;
+      setAuthenticatedState(null);
       showStatus('No HandyPet account exists for this Google account. Create an account in the HandyPet app first.', true);
       return;
     }
+    googleSignInInProgress = false;
+    setAuthenticatedState(result.user);
     showStatus('Signed in. Review the deletion information below.');
   } catch (error) {
+    googleSignInInProgress = false;
+    setAuthenticatedState(auth.currentUser);
     if (error?.code === 'auth/user-token-expired' || error?.code === 'auth/requires-recent-login') {
       showStatus('We could not verify this Google account. Please try again.', true);
     } else {
