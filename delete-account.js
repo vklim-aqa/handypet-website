@@ -14,6 +14,7 @@ const status = $('#status');
 const reauthModal = $('#reauth-modal');
 const reauthForm = $('#reauth-form');
 const reauthPassword = $('#reauth-password');
+let deletionCompleted = false;
 
 function requestPasswordReauthentication() {
   return new Promise((resolve, reject) => {
@@ -87,6 +88,11 @@ function showStatus(message, isError = false) {
 }
 
 function setAuthenticatedState(user) {
+  if (deletionCompleted) {
+    $('#signed-out-panel').hidden = true;
+    $('#authenticated-panel').hidden = true;
+    return;
+  }
   const signedIn = Boolean(user);
   $('#signed-out-panel').hidden = signedIn;
   $('#authenticated-panel').hidden = !signedIn;
@@ -136,7 +142,16 @@ deletionForm.addEventListener('submit', async (event) => {
     showStatus('Submitting your deletion request…');
     await requestAccountDeletion({ requestId: crypto.randomUUID() });
     deletionForm.hidden = true;
-    showStatus('Your account-deletion request was accepted. Your HandyPet cloud data and account will be removed by the deletion service. This page can now be closed.');
+    try {
+      await signOut(auth);
+      deletionCompleted = true;
+      setAuthenticatedState(null);
+      showStatus('Your account-deletion request was accepted. You have been signed out. Your HandyPet cloud data and account will be removed by the deletion service. This page can now be closed.');
+    } catch (signOutError) {
+      console.error('Account deletion was accepted, but sign-out failed:', signOutError);
+      showStatus('Your account-deletion request was accepted, but we could not sign you out automatically. Please click Sign out now.', true);
+      $('#authenticated-panel').hidden = false;
+    }
   } catch (error) {
     if (error?.message === 'reauthentication-cancelled') showStatus('Account deletion was cancelled.', true);
     else showStatus(deletionErrorMessage(error), true);
