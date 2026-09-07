@@ -1,5 +1,5 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js';
-import { EmailAuthProvider, GoogleAuthProvider, getAuth, onAuthStateChanged, reauthenticateWithCredential, reauthenticateWithPopup, signInWithEmailAndPassword, signInWithPopup, signOut } from 'https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js';
+import { EmailAuthProvider, GoogleAuthProvider, getAuth, getIdTokenResult, onAuthStateChanged, reauthenticateWithCredential, reauthenticateWithPopup, signInWithEmailAndPassword, signInWithPopup, signOut } from 'https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js';
 import { getFunctions, httpsCallable } from 'https://www.gstatic.com/firebasejs/12.18.0/firebase-functions.js';
 import { firebaseConfig } from './firebase-config.js';
 
@@ -11,6 +11,49 @@ const $ = (selector) => document.querySelector(selector);
 const signInForm = $('#sign-in-form');
 const deletionForm = $('#delete-account-form');
 const status = $('#status');
+const reauthModal = $('#reauth-modal');
+const reauthForm = $('#reauth-form');
+const reauthPassword = $('#reauth-password');
+
+function requestPasswordReauthentication() {
+  return new Promise((resolve, reject) => {
+    reauthModal.hidden = false;
+    reauthPassword.value = '';
+    reauthPassword.focus();
+
+    const finish = (callback) => {
+      reauthModal.hidden = true;
+      reauthForm.removeEventListener('submit', submit);
+      $('#cancel-reauth').removeEventListener('click', cancel);
+      reauthPassword.value = '';
+      callback();
+    };
+    const submit = (event) => {
+      event.preventDefault();
+      const password = reauthPassword.value;
+      if (password) finish(() => resolve(password));
+    };
+    const cancel = () => finish(() => reject(new Error('reauthentication-cancelled')));
+    reauthForm.addEventListener('submit', submit);
+    $('#cancel-reauth').addEventListener('click', cancel);
+  });
+}
+
+async function reauthenticateIfNeeded(user) {
+  const tokenResult = await getIdTokenResult(user);
+  const authTime = Number(tokenResult.claims.auth_time) * 1000;
+  const tenMinutes = 1 * 60 * 1000;
+  const recentlyAuthenticated = Number.isFinite(authTime) && Date.now() - authTime < tenMinutes;
+  if (recentlyAuthenticated) return;
+
+  const providerIds = user.providerData.map((provider) => provider.providerId);
+  if (providerIds.includes('password')) {
+    const currentPassword = await requestPasswordReauthentication();
+    await reauthenticateWithCredential(user, EmailAuthProvider.credential(user.email, currentPassword));
+  } else {
+    await reauthenticateWithPopup(user, new GoogleAuthProvider());
+  }
+}
 
 function deletionErrorMessage(error) {
   console.error('Account deletion request failed:', {
@@ -87,16 +130,9 @@ deletionForm.addEventListener('submit', async (event) => {
 
   const submit = $('#submit-deletion');
   submit.disabled = true;
-  showStatus('Confirming your identity…');
   try {
-    const providerIds = user.providerData.map((provider) => provider.providerId);
-    if (providerIds.includes('password')) {
-      const currentPassword = window.prompt('Enter your current password to confirm account deletion:');
-      if (!currentPassword) throw new Error('reauthentication-cancelled');
-      await reauthenticateWithCredential(user, EmailAuthProvider.credential(user.email, currentPassword));
-    } else {
-      await reauthenticateWithPopup(user, new GoogleAuthProvider());
-    }
+    showStatus('Checking your sign-in session…');
+    await reauthenticateIfNeeded(user);
     showStatus('Submitting your deletion request…');
     await requestAccountDeletion({ requestId: crypto.randomUUID() });
     deletionForm.hidden = true;

@@ -46,5 +46,21 @@
       <p class="delete-footnote">Deletion is processed asynchronously. It does not automatically cancel an Apple App Store or Google Play subscription.</p>
     </section>
   </main>
+
+  <div id="reauth-modal" class="reauth-modal" role="dialog" aria-modal="true" aria-labelledby="reauth-title" hidden>
+    <div class="reauth-card">
+      <p class="eyebrow">Security check</p>
+      <h2 id="reauth-title">Confirm your password</h2>
+      <p>For your security, please enter your current password before permanently deleting your account.</p>
+      <form id="reauth-form" class="delete-form">
+        <label for="reauth-password">Current password</label>
+        <input id="reauth-password" type="password" autocomplete="current-password" required>
+        <div class="reauth-actions">
+          <button id="cancel-reauth" class="delete-button delete-button-secondary" type="button">Cancel</button>
+          <button class="delete-button delete-button-danger" type="submit">Continue</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
