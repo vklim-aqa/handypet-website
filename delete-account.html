@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Request permanent deletion of your HandyPet account and cloud pet-care data.">
+  <title>Delete your HandyPet account</title>
+  <link rel="icon" type="image/png" href="assets/icon-white.png">
+  <link rel="stylesheet" href="styles.css?v=41">
+  <script type="module" src="delete-account.js"></script>
+</head>
+<body class="delete-page">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="HandyPet home"><span class="brand-paw" aria-hidden="true"></span><span>Handy<span>Pet</span></span></a>
+  </header>
+  <main class="delete-main">
+    <section class="delete-card" aria-labelledby="delete-title">
+      <div class="delete-icon" aria-hidden="true">×</div>
+      <p class="eyebrow">Account settings</p>
+      <h1 id="delete-title">Delete your HandyPet account</h1>
+      <p class="delete-intro">Account deletion permanently removes your HandyPet account, cloud pet profiles, health records, reminders, and uploaded documents. This cannot be undone.</p>
+
+      <section id="signed-out-panel" class="delete-panel">
+        <h2>Sign in to continue</h2>
+        <p class="panel-copy">Sign in to verify that you own the account you want to delete.</p>
+        <form id="sign-in-form" class="delete-form">
+          <label for="email">Email</label>
+          <input id="email" type="email" autocomplete="email" required>
+          <label for="password">Password</label>
+          <input id="password" type="password" autocomplete="current-password" required>
+          <button class="delete-button delete-button-primary" type="submit">Sign in</button>
+        </form>
+        <div class="delete-divider"><span>or</span></div>
+        <button id="google-sign-in" class="delete-button delete-button-google" type="button">Continue with Google</button>
+      </section>
+
+      <section id="authenticated-panel" class="delete-panel" hidden>
+        <div class="account-row"><p>Signed in as <strong id="signed-in-as"></strong>.</p><button id="sign-out" class="text-button" type="button">Sign out</button></div>
+        <form id="delete-account-form" class="delete-form">
+          <label class="confirmation-label"><input id="confirm-deletion" type="checkbox" required><span>I understand that account deletion is permanent and cannot be undone.</span></label>
+          <button id="submit-deletion" class="delete-button delete-button-danger" type="submit">Delete my account</button>
+        </form>
+      </section>
+
+      <p id="status" class="delete-status" role="status" aria-live="polite"></p>
+      <p class="delete-footnote">Deletion is processed asynchronously. It does not automatically cancel an Apple App Store or Google Play subscription.</p>
+    </section>
+  </main>
+</body>
+</html>
