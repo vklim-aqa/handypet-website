@@ -28,3 +28,4 @@ dist/
 build/
 coverage/
 firebase-config.js
+docs/
