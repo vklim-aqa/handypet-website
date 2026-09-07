@@ -17,6 +17,12 @@ const reauthPassword = $('#reauth-password');
 const successPanel = $('#success-panel');
 let deletionCompleted = false;
 
+function createGoogleProvider() {
+  const provider = new GoogleAuthProvider();
+  provider.setCustomParameters({ prompt: 'select_account' });
+  return provider;
+}
+
 function requestPasswordReauthentication() {
   return new Promise((resolve, reject) => {
     reauthModal.hidden = false;
@@ -53,7 +59,7 @@ async function reauthenticateIfNeeded(user) {
     const currentPassword = await requestPasswordReauthentication();
     await reauthenticateWithCredential(user, EmailAuthProvider.credential(user.email, currentPassword));
   } else {
-    await reauthenticateWithPopup(user, new GoogleAuthProvider());
+    await reauthenticateWithPopup(user, createGoogleProvider());
   }
 }
 
@@ -117,7 +123,7 @@ signInForm.addEventListener('submit', async (event) => {
 $('#google-sign-in').addEventListener('click', async () => {
   showStatus('Opening Google sign-in…');
   try {
-    await signInWithPopup(auth, new GoogleAuthProvider());
+    await signInWithPopup(auth, createGoogleProvider());
     showStatus('Signed in. Review the deletion information below.');
   } catch (_) {
     showStatus('We could not sign you in with Google. Please try again.', true);
