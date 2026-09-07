@@ -5,7 +5,6 @@ node_modules/
 .env
 .env.*
 !.env.example
-firebase-config.js
 public-deletion-url.md
 
 # npm logs and local caches
