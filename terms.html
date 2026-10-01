@@ -14,19 +14,28 @@
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="HandyPet home"><span class="brand-paw"
         aria-hidden="true"></span><span>Handy<span>Pet</span></span></a>
+    <label class="language-picker header-language-picker"><span class="sr-only" data-legal-i18n="languageLabel">Language</span>
+      <select aria-label="Select language" data-legal-i18n-aria="languageLabel">
+        <option value="en">English</option>
+        <option value="es">Espa&ntilde;ol</option>
+        <option value="fr">Fran&ccedil;ais</option>
+        <option value="de">Deutsch</option>
+        <option value="pt">Portugu&ecirc;s</option>
+      </select>
+    </label>
   </header>
   <main class="legal">
     <div class="legal-navigation">
-      <a class="legal-back" href="index.html" aria-label="Back to HandyPet home">&larr; Back to home</a>
+      <a class="legal-back" href="index.html" aria-label="Back to HandyPet home" data-legal-i18n-aria="backHomeAria" data-legal-i18n-html="backHome">&larr; Back to home</a>
       <nav class="breadcrumbs" aria-label="Breadcrumb">
         <ol>
-          <li><a href="index.html">Home</a></li>
-          <li aria-current="page">Terms of Use</li>
+          <li><a href="index.html" data-legal-i18n="home">Home</a></li>
+          <li aria-current="page" data-legal-i18n="terms">Terms of Use</li>
         </ol>
       </nav>
     </div>
     <article class="legal-document">
-      <h1 id="handypet-terms-of-use">HandyPet Terms of Use</h1>
+      <h1 id="handypet-terms-of-use" data-legal-i18n="termsTitle">HandyPet Terms of Use</h1>
       <p><strong>Effective date:</strong> [EFFECTIVE DATE]</p>
       <p>These Terms of Use (<strong>Terms</strong>) govern your access to and use of the <strong>HandyPet</strong> mobile application and related services (collectively, the <strong>Service</strong>).</p>
       <p>The Service is provided by:</p>
@@ -257,6 +266,7 @@
       <p><strong>[FULL LEGAL NAME / SOLE PROPRIETOR NAME]</strong><br><strong>Business address:</strong> [BUSINESS ADDRESS]<br><strong>Email:</strong> [SUPPORT EMAIL]<br><strong>Website:</strong> [WEBSITE]</p>
     </article>
   </main>
+  <script src="legal-i18n.js"></script>
 </body>
 
 </html>
